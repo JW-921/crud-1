@@ -1,0 +1,25 @@
+{% extends "shared/layout.html" %}
+
+{% block "content" %}
+<h1>Edit Resume</h1>
+
+<form method="POST" action="{% url 'resumes:show' resume.id %}">
+    {% csrf_token %}
+
+    title: <br> 
+    <input type="text" name="title" value="{{ resume.title }}"><br>
+
+    skill: <br>
+    <input type="text" name="skill" value="{{ resume.skill }}"><br>
+
+    content: <br>
+    <textarea name="content" value="{{ resume.content }}">
+
+    </textarea>
+    <br>
+    <button>更新</button>
+
+</form>
+
+
+{% endblock %}
