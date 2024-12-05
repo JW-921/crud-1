@@ -6,16 +6,9 @@
 <form method="POST" action="{% url 'resumes:show' resume.id %}">
     {% csrf_token %}
 
-    title: <br> 
-    <input type="text" name="title" value="{{ resume.title }}"><br>
+    {{ form.as_p }}
 
-    skill: <br>
-    <input type="text" name="skill" value="{{ resume.skill }}"><br>
-
-    content: <br>
-    <textarea name="content" value="{{ resume.content }}">
-
-    </textarea>
+    
     <br>
     <button>更新</button>
 
